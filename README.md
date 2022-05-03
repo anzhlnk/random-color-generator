@@ -4,12 +4,9 @@ When the program is not run with any input, print a block of approximately 31x9 
 
 ```bash
 $ node index.js
-![random-color-generator](random-color.jpg)
-
-$ node index.js
-
-
 ```
+
+![random-color-generator](random-color.jpg)
 
 When a user enters hue (e.g. green or red or blue) and
 luminosity (e.g. light or dark), or hue only, the program generates random colors that match those choices:
