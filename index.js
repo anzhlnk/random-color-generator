@@ -3,14 +3,14 @@ import randomColor from 'randomcolor';
 
 function drawHashRectangle(color) {
   return `###############################
-  ###############################
-  ###############################
-  ####                       ####
-  ####       ${color}         ####
-  ####                       ####
-  ###############################
-  ###############################
-  ###############################
+###############################
+###############################
+####                       ####
+####       ${color}         ####
+####                       ####
+###############################
+###############################
+###############################
   `;
 }
 //let numOfRows = 9;
@@ -25,7 +25,6 @@ function drawHashRectangle(color) {
 
 if (process.argv.length === 4) {
   const lastIndex = process.argv.splice(2, 2);
-  console.log(lastIndex);
   let myColor = randomColor({ luminosity: lastIndex[0], hue: lastIndex[1] });
   let blackAndWhiteHashRectangle = drawHashRectangle(myColor); // output string with hex color code, but still black and white
   let coloredHashRectangle = chalk.hex(myColor)(blackAndWhiteHashRectangle);
