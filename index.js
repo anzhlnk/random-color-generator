@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import randomColor from 'randomcolor';
 
-let myColor = randomColor();
+const myColor = randomColor();
 let colorAdapted = chalk.hex(myColor);
 
 let hashRectangle = `###############################
@@ -29,13 +29,13 @@ if (process.argv.length === 4) {
   const lastIndex = process.argv.splice(2, 2);
   console.log(lastIndex);
   colorAdapted = chalk.hex(
-    (myColor = randomColor({ luminosity: lastIndex[0], hue: lastIndex[1] })),
+    randomColor({ luminosity: lastIndex[0], hue: lastIndex[1] }),
   );
   console.log(colorAdapted(hashRectangle));
 } else if (process.argv.length === 3) {
   let lastIndex = process.argv.splice(2, 1);
   console.log(lastIndex);
-  colorAdapted = chalk.hex((myColor = randomColor({ hue: lastIndex[0] })));
+  colorAdapted = chalk.hex(randomColor({ hue: lastIndex[0] }));
   console.log(colorAdapted(hashRectangle));
 } else {
   console.log(colorAdapted(hashRectangle));
