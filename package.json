@@ -43,6 +43,6 @@
   },
   "dependencies": {
     "chalk": "^5.0.1",
-    "@types/randomcolor": "^0.6.2"
+    "randomcolor": "^0.6.2"
   }
 }
