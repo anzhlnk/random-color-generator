@@ -16,9 +16,12 @@ luminosity (e.g. light or dark), or hue only, the program generates random color
 
 ```bash
 $ node index.js light red
+```
+
 ![random-color-generator](light-red.jpg)
 
+```bash
 $ node index.js blue
-![random-color-generator](blue.jpg)
-
 ```
+
+![random-color-generator](blue.jpg)
