@@ -1,20 +1,18 @@
 import chalk from 'chalk';
 import randomColor from 'randomcolor';
 
-const myColor = randomColor();
-let colorAdapted = chalk.hex(myColor);
-
-let hashRectangle = `###############################
-###############################
-###############################
-####                       ####
-####       ${myColor}         ####
-####                       ####
-###############################
-###############################
-###############################
-`;
-
+function drawHashRectangle(color) {
+  return `###############################
+  ###############################
+  ###############################
+  ####                       ####
+  ####       ${color}         ####
+  ####                       ####
+  ###############################
+  ###############################
+  ###############################
+  `;
+}
 //let numOfRows = 9;
 // let numOfColumns = 31;
 // let hashRectangle = '';
@@ -28,15 +26,19 @@ let hashRectangle = `###############################
 if (process.argv.length === 4) {
   const lastIndex = process.argv.splice(2, 2);
   console.log(lastIndex);
-  colorAdapted = chalk.hex(
-    randomColor({ luminosity: lastIndex[0], hue: lastIndex[1] }),
-  );
-  console.log(colorAdapted(hashRectangle));
+  let myColor = randomColor({ luminosity: lastIndex[0], hue: lastIndex[1] });
+  let blackAndWhiteHashRectangle = drawHashRectangle(myColor); // output string with hex color code, but still black and white
+  let coloredHashRectangle = chalk.hex(myColor)(blackAndWhiteHashRectangle);
+  console.log(coloredHashRectangle);
 } else if (process.argv.length === 3) {
   let lastIndex = process.argv.splice(2, 1);
-  console.log(lastIndex);
-  colorAdapted = chalk.hex(randomColor({ hue: lastIndex[0] }));
-  console.log(colorAdapted(hashRectangle));
+  let myColor = randomColor({ hue: lastIndex[0] });
+  let blackAndWhiteHashRectangle = drawHashRectangle(myColor);
+  let coloredHashRectangle = chalk.hex(myColor)(blackAndWhiteHashRectangle);
+  console.log(coloredHashRectangle);
 } else {
-  console.log(colorAdapted(hashRectangle));
+  let myColor = randomColor();
+  let blackAndWhiteHashRectangle = drawHashRectangle(myColor);
+  let coloredHashRectangle = chalk.hex(myColor)(blackAndWhiteHashRectangle);
+  console.log(coloredHashRectangle);
 }
