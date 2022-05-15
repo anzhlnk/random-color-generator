@@ -13,15 +13,6 @@ function drawHashRectangle(color) {
 ###############################
   `;
 }
-// let numOfRows = 9;
-// let numOfColumns = 31;
-// let hashRectangle = '';
-// for (let i = 1; i <= numOfRows; i++) {
-//   for (let j = 1; j <= numOfColumns; j++) {
-//     hashRectangle += '#';
-//   }
-//   hashRectangle += '\n';
-// }
 
 if (process.argv.length === 4) {
   const lastIndex = process.argv.splice(2, 2);
